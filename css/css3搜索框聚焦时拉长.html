@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css搜索框聚焦是变长</title>
+	<style>
+		#search input[type="text"] {     
+			background: url(search-white.png) no-repeat 10px 6px #444;    
+			border: 0 none;     
+			font: bold 12px Arial,Helvetica,Sans-serif;     
+			color: #d7d7d7;    
+			width:150px;     
+			padding: 6px 15px 6px 35px;     
+			-webkit-border-radius: 20px;     
+			-moz-border-radius: 20px;     
+			border-radius: 20px;     
+			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);      
+			-webkit-transition: all 0.7s ease 0s;     
+			-moz-transition: all 0.7s ease 0s;     
+			-o-transition: all 0.7s ease 0s;     
+			transition: all 0.7s ease 0s;     
+		} 
+		#search input[type="text"]:focus {     
+			background: 10px 6px #fcfcfc;     
+			color: #555;     
+			width: 200px;  
+			padding: 6px 15px 6px 35px;     
+			-webkit-border-radius: 20px;     
+			-moz-border-radius: 20px;     
+			border-radius: 20px;     
+			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);      
+	   
+			-webkit-transition: all 0.7s ease 0s;     
+			-moz-transition: all 0.7s ease 0s;     
+			-o-transition: all 0.7s ease 0s;     
+			transition: all 0.7s ease 0s;     
+		}
+	</style>
+</head>
+<body>
+	<form id="search" action="http://www.zhiyanblog.com" method="get">
+		<input type="text" name="q" placeholder="Search..." size="40" />
+	</form>
+	<form id="search" action="http://www.zhiyanblog.com" method="get">
+		<input type="text" name="q" placeholder="Search..." size="40" x-webkit-speech/>
+	</form>
+	<form id="search" action="http://www.zhiyanblog.com" method="get">
+		<input type="text" name="q" placeholder="Search..." size="40" autofocus/>
+	</form>
+</body>
+</html>

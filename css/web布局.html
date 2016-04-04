@@ -1,0 +1,534 @@
+web布局大全
+两栏布局
+三栏布局
+等高布局
+css布局之
+回忆用来当做笔记，把以前看到过的布局方式总结起来方便查阅。常见的两栏布局有两栏固定布局和自适应布局。
+一.两栏布局
+其实我们常用的网页左右布局就是三种方法，绝对定位、浮动定位、负边距再辅以margin等css方法。
+一。两栏固定布局
+ps:声明这里我们统一采用主内容优先的方法写html即main的div在sidebar的div前面，不然又可以多出很多方法。
+1.float+margin方法
+.边栏在右，主内容栏在左。
+<div class="wrapper">
+<div class="header">
+        <h1>Header content</h1>
+    </div>
+    <div class="main-content"><h2>main content</h2></div>
+    <div class="sidebar"><h2>sidebar</h2></div>
+<div class="footer">
+        <h2>Footer Content</h2>
+    </div>
+</div>
+css:
+.wrapper {
+  width: 960px; /*页面总宽度*/
+  margin: 0 auto; /*水平居中*/
+  text-align: left; /*重置文本对齐方式*/
+	
+}
+
+.header {
+  
+  background:green;
+}
+
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  margin-left: 20px; /*边栏间距，可自行修改*/
+  display: inline; /*防止IE6双边距*/
+  float: left;
+	background:blue;
+	 height:200px;
+}
+
+.main-content {
+  width: 720px; /*主内容宽度*/
+  display: inline; /*防止IE6又边距*/
+  float: left;
+  height:200px;
+	background:red;
+}
+
+.footer {
+  clear: both; /*清除浮动，非常重要，不可缺少*/
+	background:green;
+}
+
+demo http://sandbox.runjs.cn/show/rfxuud8d
+.边栏在左，主内容栏在右。
+<div class="wrapper">
+    <div class="header">
+        <h1>Header content</h1>
+    </div>
+    <div class="main-content">
+        <h2>Main Content</h2>
+    </div>
+    <div class="sidebar">
+        <h2>Sidebar Content</h2>
+    </div>    
+    <div class="footer">
+        <h2>Footer Content</h2>
+    </div>
+</div>
+css
+
+.wrapper {
+  width: 960px; /*页面总宽度*/
+  margin: 0 auto; /*水平居中*/
+  text-align: left; /*重置文本对齐方式*/
+}
+
+.header {
+  margin-bottom: 5px; /*顶部与主内容垂直间距，可自行修改*/
+  background:green;
+}
+
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  margin-right: 20px; /*边栏间距，可自行修改*/
+  display: inline; /*防止IE6双边距*/
+  float: left;
+  margin-bottom: 5px; /*边栏与footer之间的垂直间距，可自行修改*/
+	height:200px;
+	background:blue;
+}
+
+.main-content {
+  width: 720px; /*主内容宽度*/
+  display: inline; /*防止IE6又边距*/
+  float: right;
+  margin-bottom: 5px; /*主内容与footer之间的垂直间距，可自行修改*/
+	background:red;
+	height:200px;
+}
+
+.footer {
+  clear: both; /*清除浮动，非常重要，不可缺少*/
+	background:green;
+}
+demo http://sandbox.runjs.cn/show/31ut0bke
+2.使用负边距布局的几种方法
+边栏在左，主内容栏在右
+<div id="header">
+    <div class="container">
+        <h1>Header content</h1>
+        <p> Fixed Width Layout ➽ Two Columns Layout </p>
+    </div>
+</div>
+<div id="page">
+    <div class="container">
+        <div class="main-wrap">
+            <div class="main-content">
+                <h2>Main Content</h2>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2>Sidebar Content</h2>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container">
+        <h2>Footer Content</h2>
+    </div>
+</div>
+css:
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*===================================================*\
+ *                                                   *
+ *   Layout                                          *
+ *  .container宽度=.sidebar宽度+间距+.main-content宽度 *
+ *                                                   *
+\*===================================================*/
+/*清除浮动*/
+.container:after,
+.container:before {
+  content: "";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+  overflow: hidden;
+}
+
+.container {
+  width: 960px; /*页面总宽度*/
+  margin: 0 auto; /*水平居中*/
+  text-align: left; /*重置文本对齐方式*/
+  zoom: 1;
+}
+
+#header {
+  background: #b1b1b1; /*header全屏背景色设置*/
+  color: #fff;
+  margin-bottom: 15px; /*顶部与主内容垂直间距，可自行修改*/
+}
+.main-wrap {
+  float: left;/*很重要*/
+  width: 100%;/*很重要*/
+}
+.main-content {
+  margin-left: 240px;/*sidebar width + margin-right*/
+}
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  float: left; /*侧栏居左*/
+  margin-left: -960px;/*容器container的宽度*/
+  display: inline;/*清除IE6下又边距*/
+  zoom: 1;
+  position: relative;
+}
+
+#footer {
+  background: #b1b1b1; /*footer全屏背景色设置*/
+  color: #fff;
+}
+
+/*测试样式，可自行修改*/
+#header .container {
+  height: 75px;
+}
+
+.sidebar {
+  height: 350px;
+  background-color: #E7DBD5;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  background-color: #F2F2E6;
+  height: 350px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#footer .container {
+  margin-top: 15px;
+}
+demo:http://sandbox.runjs.cn/show/3xosumm4
+我们还可以通过不改变Html只改变css达到上面同样的效果，代码如下：
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*===================================================*\
+ *                                                   *
+ *   Layout                                          *
+ *  .container宽度=.sidebar宽度+间距+.main-content宽度 *
+ *                                                   *
+\*===================================================*/
+/*清除浮动*/
+.container:after,
+.container:before {
+  content: "";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+  overflow: hidden;
+}
+
+.container {
+  width: 960px; /*页面总宽度*/
+  margin: 0 auto; /*水平居中*/
+  text-align: left; /*重置文本对齐方式*/
+  zoom: 1;
+}
+
+#header {
+  background: #b1b1b1; /*header全屏背景色设置*/
+  color: #fff;
+  margin-bottom: 15px; /*顶部与主内容垂直间距，可自行修改*/
+}
+.main-wrap {
+  float: right;
+  width: 100%;
+  display: inline;
+}
+.main-content {
+  margin-left: 240px;/*左边栏宽度+右边距*/
+}
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  float: right; /*侧栏居左*/
+  margin-right: -220px;/*左边栏宽度*/
+  position: relative;
+  display: inline;
+}
+
+#footer {
+  background: #b1b1b1; /*footer全屏背景色设置*/
+  color: #fff;
+}
+
+/*测试样式，可自行修改*/
+#header .container {
+  height: 75px;
+}
+
+.sidebar {
+  height: 350px;
+  background-color: #E7DBD5;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  background-color: #F2F2E6;
+  height: 350px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#footer .container {
+  margin-top: 15px;
+}
+以及把上面相同的代码改为下面的代码都是可以显示同样的效果
+.main-wrap {
+  float: right;
+  width: 100%;
+  margin-right: -240px;/*边栏宽度和间距*/
+  display: inline;/*清除IE6又边距bug*/
+}
+.main-content {
+  margin-right: 240px;/*边栏宽度和间距*/
+}
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  float: left; /*侧栏居左*/
+  position: relative;
+}
+当然还一种更改了一点Html和css的方法，代码如下：
+<div id="page">
+    <div class="container">
+        <div class="main-content">
+            <h2>Main Content</h2>
+        </div>
+        <div class="sidebar">
+            <h2>Sidebar Content</h2>
+        </div>
+    </div>
+</div>
+
+css:
+.main-content {
+  float: left;
+  width: 720px;/*主内容宽度*/
+  display: inline;/*清除IE6下双边距Bug*/
+  margin-right: -100%;
+  margin-left: 240px;/*边栏宽度和间距*/
+  position: relative;
+  zoom: 1;
+}
+
+
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  float: left; /*侧栏居左*/
+  margin-left: 0;
+  margin-right: -220px;/*边栏宽度*/
+  display: inline;
+  position: relative;
+}
+至于这种方法的另外一种主内容在左，边栏在右的效果我就不写了，方法是一样的
+3.传说中的"No div, no float, no clear, no hack"
+这种没有div，没有float，没有清除浮动和没有hack的布局还是少见的，原理有点类似table布局。这个方法是把div换为列表标签来嵌套布局。感觉怪怪的，大家也可以用div试试，div看起来可能更顺眼一点：
+我们还是先看一下用div的结构吧
+<div id="wp">
+ <div id="hd">Header</div>
+  <div id="bd">Body
+   <div id="doc">
+    <div id="s1">Section 1</div>
+    <div id="s2">Section 2</div>
+    <div id="s3">Section 3</div>
+   </div>
+  </div>
+ <div id="ft">Footer</div>
+</div>
+现在我们把div换为列表ol li标签，实现no div.效果一样的
+<ol id="wp">
+  <li id="hd">
+    <div class="container">
+			<h2>Header content</h2>		
+    </div>
+  </li>
+  <li id="bd">
+    <ol id="doc">
+      <li id="s1">
+        <div class="container">
+          <h2>Sidebar Content</h2>
+        </div>
+      </li>
+      <li id="s2">
+        <div class="container">
+          <h2>Main Content</h2>
+        </div>
+      </li>
+    </ol>
+  </li>
+    <li id="ft">
+      <div class="container">
+        <h2>Footer Content</h2>
+      </div>
+    </li>
+</ol>
+css:
+	* {
+  margin: 0;
+  padding: 0;
+}
+/*==========================================================*\
+ *
+ * Layout
+ * #wp = wrapper 整个容器
+ * #hd = header  头部
+ * #bd = body 主体容器
+ * #ft = footer 脚部
+ * #doc = document 主体
+ * #s1,#s2 = column 列
+ *
+\*==========================================================*/
+#wp {
+  width: 960px;/*页面宽度*/
+  margin: 0 auto; /*水平居中*/
+  list-style-type: none;/*去掉列表默认类型符号*/
+  text-align: left;/*重置文本左对齐*/
+}
+#bd {
+  display: table;/*表格显示*/
+  table-layout: fixed;/*这个很重要*/
+  border-collapse: separate;
+}
+/*在ie6下词内换行*/
+*html #bd {
+  word-wrap: break-word;
+}
+#doc {
+  display: table-row;/*表格行显示*/
+}
+#s1,#s2 {
+  display: table-cell;/*表格单元格显示*/
+}
+/*ie6-7下不支持display:table-cell，因此换成下面的代码*/
+#s1,#s2,{/*注意选择器后面的逗号不能丢，这个非常重要，不然ie6下无效果*/
+  display:inline;
+	zoom:1;
+	vertical-align:top;
+	position: relative;
+	margin-top: -20px;
+	overflow-x:hidden;
+}
+#s1 {
+  width: 220px;/*侧栏宽度*/
+}
+#s2 {
+  width: 720px;/*主内容宽度*/
+  padding-left: 20px;/*因为这个是单元格表现形式，所以不能使用margin-left来控制两列的间距，需要使用padding*/
+}
+/*兼容mac下的IE低版本写法*/
+/*\*//*/
+  #s1,#s2 {
+    display:inline-block;
+    float: left;
+  }
+#ft {
+  clear:both;
+}
+/**/
+
+/*装饰样式*/
+#hd {
+  padding-bottom: 10px;
+}
+#bd {
+  padding-bottom: 10px;
+}
+#hd .container{
+  background-color: #b1b1b1;
+  color: #fff;
+}
+#s1 .container{
+  background-color: #E7DBD5;
+}
+#s2 .container{
+  background-color: #F2F2E6;
+}
+#doc .container {
+  min-height: 200px;
+  height: auto !important;
+  height: 200px;
+}
+#ft .container{
+  background-color: #b1b1b1;
+  color: #fff;
+}	
+到这里我们可以发现可以用这种方法实现我们前面所有的布局，这里我就不一一举例了，大家可以去试一下。
+二：两栏自适应布局
+这里我们依然采用内容优先显示的方法写html,
+1.absolute+margin绝对定位
+<div id="bd">
+  
+    <div id="main">主内容栏自适应宽度</div>
+    <aside id="aside">侧边栏固定宽度</aside>
+</div>
+css:
+#bd {
+position: relative;
+margin: 10px 0;
+}
+#aside{
+    position:absolute;
+    top:0;
+    left:0;
+    width:200px;
+    background:blue;
+}
+#main{
+    margin-left:210px;
+    background:red;
+}
+demo:http://sandbox.runjs.cn/show/govent5j
+同理我们可以更改css实现让右栏自适应，左栏固定，代码如下：
+#aside{
+    position:absolute;
+    top:0;
+    right:0;
+    width:200px;
+    background:blue;
+}
+#main{
+    margin-right:210px;
+    background:red;
+}
+用这种方法很简单，但是也有一个缺点，就是因为 absolute 是定位流，脱离正常排版，也就是说绝对定位元素不影响其上下文的排版方式，所以#aside 无法撑开父元素的高度，它将会溢出父元素区域，效果可以看截图
+
+
+2.float+margin浮动布局
+<div id="bd">
+   
+    <div id="main">主内容栏自适应宽度</div>
+     <aside id="aside">侧边栏固定宽度</aside>
+</div>
+
+css:
+
+#bd {
+display:block;
+zoom: 1;
+overflow: hidden;
+margin: 10px 0;
+}
+#aside{
+    float:left;
+    width:200px;
+    background:red;
+}
+#main{
+    margin-left:210px;
+    background:blue;
+}

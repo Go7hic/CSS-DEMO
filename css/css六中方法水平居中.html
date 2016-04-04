@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>六中方法实现水平居中</title>
+    <style>
+        .pagination {
+           /* width: 293px;
+            margin-left: auto;
+            margin-right: auto;*/
+            text-align: center;
+            font-size: 0;
+            letter-spacing: -4px;
+            word-spacing: -4px;
+        }
+        .pagination li {
+            line-height: 25px;
+        /*    display: inline;
+            float: left;*/
+            display: inline-block;
+            zoom:1;
+            letter-spacing: normal;
+            word-spacing: normal;
+            font-size: 12px;
+            margin: 0 3px;
+        }
+        .pagination a {
+            display: block;
+            color: #f2f2f2;
+            text-shadow: 1px 0 0 #101011;
+            padding: 0 10px;
+            border-radius: 2px;
+            box-shadow: 0 1px 0 #5a5b5c inset,0 1px 0 #080808;
+            background: -webkit-linear-gradient(#434345, #2f3032);
+            background: -o-linear-gradient(#434345, #2f3032);
+            background: linear-gradient(#434345, #2f3032);
+        }
+        .pagination a:hover {
+            text-decoration: none;
+            box-shadow: 0 1px 0 #f9bd71 inset,0 1px 0 #0a0a0a;
+            background: linear-gradient(top,#f48b03,#c87100);
+        }
+    </style>
+</head>
+<body>
+    <div class="pagination">
+        <ul>
+            <li><a href="">Pre</a></li>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">Next</a></li>
+        </ul>
+    </div>
+</body>
+</html>

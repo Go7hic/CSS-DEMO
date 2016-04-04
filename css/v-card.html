@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v card</title>
+	<style type="text/css">
+		*{
+			margin: 0;padding: 0;
+			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-transition:all 0.3s ease-in;
+			-moz-transition:all 0.3s ease-in;
+			-moz-box-sizing:  all 0.3s ease-in;
+			transition: all 0.3s ease-in;  
+		}
+		.title h1 {
+			position: absolute;
+			top: -100px;
+			text-align: center;
+			font-size: 12px;
+		}
+		.title h2 {
+			position: absolute;
+			top: -200px;
+			text-align: center;
+			font-size: 8px;
+		}
+		header {
+			width: 62%;
+			height: 80px;
+			background: rgba(0, 255, 0, 0.3);
+			margin-top: 25px;
+		}
+		.contact_details {
+			display: block;
+			float: right;
+			width: 60%;
+			background: rgba(0, 0, 0, 0.2);
+			padding: 10px 2% 10px 0;
+			margin-top:40px;
+		}
+		.bcard {
+			border: solid 1px #999;
+			border-bottom: 2px solid #999;
+			background: rgba(255, 255, 255, 0.5);
+			margin-top: -110px;
+			position: absolute;
+			display: inline-block;
+			width: 400px;
+			height: 220px;
+			top: 50%;
+			margin-left: -200px;
+			-webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+			box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+			border-top: 0;
+			overflow:hidden;
+		}
+		.bcard:hover > header {
+			margin-left:-260px;
+		}
+		.bcard:hover > .contact_details {
+			margin-right:-260px;
+		}
+		.bcard:hover > footer {
+			top:150px;
+		}
+		.bcard:hover > footer a {
+			font-size: 36px;
+		}
+		.bcard:hover > .title h1 {
+			top: 24px;
+			font-size: 24px;
+		}
+		.bcard:hover > .title h2 {
+			top: 66px;
+			font-size: 14px;
+		}
+		h1, h2 {
+			float: left;
+			width: 90%;
+			text-align: left;
+			margin: 15px 5% 0 5%;
+			font-size: 24px;
+			font-weight: 400;
+			color: #333;
+			text-shadow: 1px 1px 1px #FFFFFF;
+		}
+		h2 {
+			font-size: 14px;
+			margin-top: 3px;
+			color: #444;
+		}
+		.border-top {
+			float: left;
+			border-top: solid 3px;
+			margin: 0;
+		}
+		.gray1 {
+			border-color: #333;
+			width: 15%;
+		}
+		.gray2 {
+			border-color: #666;
+			width: 23%;
+		}
+		.gray3 {
+			border-color: #999;
+			width: 62%;
+		}
+		p {
+			text-align: right;
+			margin: 0;
+			font-weight: 100;
+			color: #444;
+			font-size: 13px;
+			text-shadow: 1px 1px 1px #FFFFFF;
+		}
+		.mail {
+			margin-top: 0;
+		}
+		a {
+			text-decoration: none;
+			text-shadow: 1px 1px 1px #FFFFFF;
+			color: #444;
+		}
+		footer {
+			position: absolute;
+			width: 80%;
+			text-align: center;
+			margin: 0 10%;
+			display: block;
+			top: 250px;
+		}
+		footer a {
+			bottom: 0;
+			margin: 0 auto;
+			float: left;
+			text-align: center;
+			display: block;
+			font-size: 10px;
+			width: 20%;
+		}
+		.fa-google-plus-square:hover {
+			color:#D34836;
+		}
+		.fa-linkedin-square:hover {
+			color:#007BB6;
+		}
+		.fa-twitter-square:hover {
+			color:#4099FF;
+		}
+		.fa-facebook-square:hover {
+			color:#3B5998;
+		}
+		.fa-envelope:hover {
+			color:#000;
+		}
+	</style>
+</head>
+<body>
+	<div class="bcard">
+		<div class="border-top gray1"></div>
+		<div class="border-top gray2"></div>
+		<div class="border-top gray3"></div>
+		<div class="title">
+			<h1>Gothic</h1>
+			<h2>front-end-developer</h2>
+		</div>
+		<header>
+			<h1>Gothic</h1>
+			<h2>front-end-developer</h2>
+		</header>
+		<div class="contact_details">
+			<p>
+				187xxxxxxxx
+			</p>
+			<p class="mail">
+				<a href="mailto:admin@yongyuan.us">admin@yongyuan.us</a>
+			</p>
+
+		</div>
+		<footer>
+			<a href="https://plus.google.com/+TudorAnghelina1" title="follow me on google+"><i class="fa fa-google-plus-square"></i></a>
+			<a href="https://twitter.com/tudoranghelina" title="Follow me on twitter"><i class="fa fa-twitter-square"></i></a>
+			<a href="https://www.facebook.com/tudoranghelina1" title="Follow me on facebook"><i class="fa fa-facebook-square"></i></a>
+			<a href="http://www.linkedin.com/in/tudoranghelina" title="View my LinkedIn profile"><i class="fa fa-linkedin-square"></i></a>
+			<a href="mailto:tudor.anghelina@gmail.com" title="Send me an e-mail"><i class="fa fa-envelope"></i></a>
+		</footer>
+	</div>
+</body>
+</html>

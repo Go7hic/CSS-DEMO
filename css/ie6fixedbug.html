@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ie6fixedbug</title>
+	<style type="text/css">
+	*html{
+    background-image:url(about:blank);
+    background-attachment:fixed;
+}
+		.fixed{
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			_position:absolute;
+            _bottom:auto;
+            _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+		}
+	</style>
+</head>
+<body>
+	<div class="fixed">该死的ie6</div>
+	<div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

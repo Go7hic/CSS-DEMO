@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		html,body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		#container {
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+		}
+		#page {
+			padding-bottom: 60px;/*高度等于footer的高度*/
+		}
+		#footer {
+			position: relative;
+			margin-top: -60px;/*等于footer的高度*/
+			height: 60px;
+			clear:both;
+			background: red;
+		}
+
+		#header {
+			padding: 10px;
+			background: lime;
+		}
+		#left {
+			width: 18%;
+			float: left;
+			margin-right: 2%;
+			background: blue;
+		}
+		#content{
+			width: 60%;
+			float: left;
+			margin-right: 2%;
+			background: green;
+		}
+		#right {
+			width: 18%;
+			float: left;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="header">Header</div>
+		<div id="page" class="clearfix">
+			<div id="left">Left sidebar</div>
+			<div id="content">Main content</div>
+			<div id="right">Right sidebar</div>
+		</div>
+	</div>
+	<div id="footer">Footer </div>
+</body>
+</html>

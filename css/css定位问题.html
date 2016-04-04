@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css定位问题</title>
+	<style type="text/css">
+
+		#example {
+			float:left;
+		
+		}
+		#div-before, #div-after {
+			background-color: #88d;
+			color: #000;
+			width:400px;
+		}
+		#example div p {
+			margin: 0 .25em;
+			padding: .25em 0;
+		}		
+		#div-1 {
+				/*  等下补充的定位属性   */
+
+		}
+		#div-1{
+			width:400px;
+			background-color: #000;
+			color:#fff;
+
+		}
+		#div-1a {
+			background-color: #f00;
+			color:#fff;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 200px;
+		}
+		#div-1b {
+			background-color: green;
+			color:#fff;
+
+		}
+		#div-1c {
+			background-color: blue;
+			color:#fff;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="example">
+
+		<div id="div-before">
+			<p>id = div-before</p>
+		</div>
+
+		<div id="div-1">
+			<div id="div-1-padding">
+
+				<p>id = div-1</p>
+
+				<div id="div-1a">
+					<p>id = div-1a</p>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pretium dui sit amet felis. Integer sit amet diam. Phasellus ultrices viverra velit.</p>
+				</div>
+
+				<div id="div-1b">
+					<p>id = div-1b</p>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pretium dui sit amet felis. Integer sit amet diam. Phasellus ultrices viverra velit. Nam mattis, arcu ut bibendum commodo, magna nisi tincidunt tortor, quis accumsan augue ipsum id lorem.</p>
+				</div>
+
+				<div id="div-1c"><p>id = div-1c</p></div>
+
+			</div>
+		</div>
+
+		<div id="div-after">
+			<p>id = div-after</p>
+		</div>
+
+	</div>
+</body>
+</html>

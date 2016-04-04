@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父元素包含浮动子元素</title>
+	<style type="text/css">
+		section{
+			/*border:1px solid blue;margin:0 0 10px 0;
+			overflow: hidden;方法一*/
+			/*border:1px solid blue;margin:0 0 10px 0;float:left;width:100%;方法二*/
+			border:1px solid blue; margin:0 0 10px 0;
+
+		}
+		p{margin:0;}
+		footer {
+			/*border:1px solid red; 方法一*/
+			/*border:1px solid red;clear:left;方法二*/
+			border:1px solid red; 
+		}
+		img{float:left;}
+		/*.clear_me {clear:left;}*/
+		.clearfix:after { 
+			content:"."; 
+			display:block; 
+			height:0; 
+			visibility:hidden; 
+			clear:both; 
+		}
+
+	</style>
+</head>
+<body>
+	<section class="clearfix">
+	<img src="2.jpg">
+		<p>格物致知，自强不息</p>
+		<!-- <div class="clear_me"></div>-->	
+	</section>
+	<footer>
+		这里是底部啦
+	</footer>
+</body>
+</html>
+第三种：这个clearfix规则最早是由程序员Tony Aslett发明的，它只添加了一个清除的包含句点作为非浮动元素（必须得有内容，而句点是最小的内容）①。规则中的其他声明是为了确保这个伪元素没有高度，而且在页面上不可见。 使用clear:both意味着section中新增的子元素会清除左、右浮动元素（位于左、右浮动元素下方）。这里当然可以只用left，但both也适用于将来图片float:right的情况。
+
+① AFTER会在元素内容后面而不是元素后面插入一个伪元素。

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 翻转</title>
+	<style type="text/css">
+		/*a{
+			display: block;
+			width: 6.6em;
+			height: 1.4em;
+			line-height: 1.4;
+			text-align: center;
+			text-decoration: none;
+			border:1px solid #66a300;
+			background-color: #8cca12;
+			color: #fff;
+			text-shadow: 2px 2px 2px #66a300;
+			-webkit-box-shadow: 2px 2px 2px #ccc;
+			 -moz-box-shadow: 2px 2px 2px #ccc;
+			 box-shadow: 2px 2px 2px #ccc; 
+			 --webkit-box-reflect: below 2px -webkit-gradient(
+			 	liner,left top,left bottom.from(transparent),color-stop(0.52,transparent),to(white));
+			 }
+		}*/
+		a.tooltip{
+		position:relative;
+		}
+		a.tooltip span{
+			display: none;
+		}
+		a.tooltip:hover span,a.tooltip:focus span{
+			display: block;
+			position: absolute;
+			top: 1em;
+			left:2em;
+			padding: 0.2em 0.6em;
+			border:1px solid #996633;
+			background-color: #FFFF66;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<p><a href=""class="tooltip">哥特复兴<span>(这是我的昵称)</span></a>格物致知 自强不息</p>
+</body>
+</html>
+纯css工具提示
+这里所说的提示是我们平常当鼠标停悬在有title属性的元素上时一些浏览器弹出的提示消息。当然还有很多方法像用JavaScript和css也可以实现这个提示。今天我要说的是纯css实现的，当然这个不是所有的浏览器都支持，要像ff这样的搞基浏览器才行。
+	这里主要用的tooltip这个东西。还是举个可爱的例子吧：
+	<p>
+		<a href="" class="tooltip">哥特复兴<span>我的昵称</span></a>格物致知 自强不息
+	</p>
+	css代码：
+	a.tooltip{
+	position:relative;
+	}
+	a.tooltip span{
+	display:none
+	}
+	a tooltip:hover span,a.tooltip:focus span{
+	display:block;
+	position:absolute;
+	top:1em;
+	left:2em;
+	padding:0.2em 0.6em;
+	border:1px solid #996633;
+	background-color:#FFFF66;
+	color:#000;
+	}

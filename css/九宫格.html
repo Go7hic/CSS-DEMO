@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>九宫格html</title>
+	<style type="text/css">
+		body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+			margin:0;
+			padding:0;
+		}
+		ol, ul, li {
+			list-style:none;
+			list-style-type:none;
+		}
+		
+		.box{
+			border-left: 5px solid blue;
+			border-top: 5px solid blue;
+			height: 165px;
+			width: 165px;
+		}
+		.box li{
+			float:left;
+			width:50px;
+			height: 50px;
+			background: #fff;
+			border-right: 5px solid blue;
+			border-bottom: 5px solid blue;
+			line-height: 50px;
+			text-align: center;
+
+		}
+		.box li:hover,.box li.hover{
+			border:5px solid red;
+			margin:-5px 0 0 -5px;
+			z-index:10;
+			position:relative;
+		}
+		.clear { *zoom:1; }
+		.clear:before, .clear:after {
+			display:block;
+			content:"";
+			line-height:0;
+		}
+		.clear:after { clear:both; }
+
+
+
+		.clearfix:after{content: '\20';display: block;height: 0;clear: both;visibility: hidden}
+		.clearfix{*zoom:1;}
+		.grid-box{width: 165px;height: 165px;margin: 50px auto;padding: 5px 0 0 5px}
+		.grid-box li{float:left;}
+		.grid-box li a{display: inline-block;margin-top: -5px;width: 50px;height: 50px;text-align: center;line-height: 50px;border: 5px solid blue;text-decoration: none;color: green;position: relative;margin-left: -5px;*left:-5px;}
+		.grid-box li a:hover{border-color: red;z-index: 1}
+
+
+
+		.wrap{ width: 165px; height: 165px; margin:0 auto; padding: 0 0 5px 5px; overflow: hidden; background: blue}
+		.wrap li{ width: 50px; height: 50px; line-height: 50px; margin:5px 5px 0 0; text-align: center; background: #fff; float: left; position:relative;}
+		.wrap li a{ width: 50px; height: 50px; display: block; text-decoration: none; color: #a90c40}
+		.wrap li a:hover{ border: 5px  solid #dd0000; position: absolute; left: -5px; top: -5px;}
+	</style>
+</head>
+<body>
+	<!-- 1 -->
+	<div class="box" style="margin:50px auto">
+		<ul class="clear">
+			<li class="item">1</li>
+			<li class="item">2</li>
+			<li class="item">3</li>
+			<li class="item">4</li>
+			<li class="item">5</li>
+			<li class="item">6</li>
+			<li class="item">7</li>
+			<li class="item">8</li>
+			<li class="item">9</li>
+		</ul>
+	</div>
+
+		<!-- 2 -->
+	<ul class="grid-box clearfix">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+		<li><a href="#">7</a></li>
+		<li><a href="#">8</a></li>
+		<li><a href="#">9</a></li>
+	</ul>
+
+		<!-- 3 -->
+	<ul class="wrap">
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li><a href="">6</a></li>
+		<li><a href="">7</a></li>
+		<li><a href="">8</a></li>
+		<li><a href="">9</a></li>
+	</ul>
+</body>
+</html>

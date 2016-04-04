@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css列表的几个写法</title>
+	<style type="text/css">
+		#wrapper{
+			width:100%;
+			/*添加底边对齐的css*/
+			overflow: hidden;
+			position: relative;
+		}
+		.box{
+			width:250px;
+		
+			float:left;
+			display: inline;
+			padding-left:20px;
+			padding-right: 20px;
+			padding-top:20px;
+			padding-bottom: 520px;
+			margin-left: 20px;
+			margin-bottom: 500px;
+			background-color:gray;
+			
+			padding:20px;
+		}
+		.box-bottom{
+			position: absolute;
+			bottom:0;
+			height: 20px;
+			width:290px;
+			background-color: gray;
+			margin-left: -20px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="box">
+			<h1>box1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, consequatur, quos, repudiandae saepe libero odit neque sequi voluptas maxime culpa ducimus ad beatae eius error nemo quia sit porro veritatis!</p>
+			<div class="box-bottom"></div>
+		</div>
+		<div class="box">
+		<h1>box2</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur omnis dolor praesentium nisi repellendus at tenetur labore. Velit, possimus tempore in autem excepturi eligendi nam quasi tempora qui natus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur omnis dolor praesentium nisi repellendus at tenetur labore. Velit, possimus tempore in autem excepturi eligendi nam quasi tempora qui natus</p>
+			<div class="box-bottom"></div>
+		</div>
+		<div class="box">
+			<h1>box3</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi sunt tempore harum culpa quaerat dolorem quibusdam beatae cumque. Assumenda, enim eligendi velit inventore ullam eius quo in recusandae voluptatem ut.</p>
+			<div class="box-bottom"></div>
+		</div>
+	</div>
+</body>
+</html>

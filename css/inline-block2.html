@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			list-style: none outside none;
+		}
+		.list{
+			margin:10px 0;
+			font-size:0;
+			[;font-size:12px;];
+			*font-size:0;
+			font-family:arial;
+			[;letter-spacing:-3px;];
+			*letter-spacing:normal;
+			*word-spacing:-1px;
+		}
+		a{
+			text-decoration: none;
+			text-align: center;
+		}
+		.dib-block{
+			border: solid 1px red;
+			height: 50px;
+			width: 50px;
+			display: inline-block;
+			font-size: 12px;
+			margin-left: -1px;
+			*display:inline;
+			*zoom:1;
+		}
+		.block{
+			border: solid 1px red;
+			height: 50px;
+			width: 50px;
+			display: inline-block;
+			*display:inline;
+			*zoom:1;
+			font-size: 14px;
+			word-spacing: normal;
+			letter-spacing:normal;		
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<ul class="list">
+		<li class="dib-block"><a href="#">block</a></li>
+		<li class="dib-block"><a href="#" style="color:red;">block</a></li>
+		<li class="dib-block"><a href="#">block</a></li>
+		<li class="dib-block"><a href="#">block</a></li>
+		<li class="dib-block"><a href="#">block</a></li>
+	</ul>
+	<div class="list">
+		<a href="" class="block">inline</a>
+		<a href="" class="block">inline</a>
+		<a href="" class="block">inline</a>
+		<a href="" class="block">inline</a>
+		<a href="" class="block">inline</a>
+	</div>
+</body>
+</html>

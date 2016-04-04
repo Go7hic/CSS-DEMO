@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ie6 3像素文本偏移bug</title>
+	<style type="text/css">.
+
+     #container,#container2,#container3,#container4{ width: 1000px;  }
+     #bugger,#bugger2,#bugger3,#bugger4{
+        float: left;
+        width: 300px;
+        background: #65A5E1;
+    }
+
+    #victim {
+        width: 200px;
+        margin-left: 300px;
+
+        background: #ff0000;
+    }
+      #victim2 {
+        height: 1.5em; /* just to give "layout" */
+        margin-left: 300px;
+         background: #ff0000;
+    }
+    #bugger4 {
+        float: right;
+        width: 300px;
+         background: #ff0000;
+    }
+    #victim4 {
+        width: 200px;
+        margin-right: 300px;
+         background: #ff0000;
+    }
+</style>
+ <!--[if lt IE 7]>
+        <style type="text/css">
+            #bugger { margin: -3px; }
+            #victim{ margin-left: 300px; height:1%;}
+        </style>
+    <![endif]-->
+</head>
+<body>
+    <div id="container">
+        <div id="bugger">
+            <img src="2.jpg">
+        </div>
+        <div id="victim">*cry*</div>
+    </div><br/>
+    <!-- 
+    <div id="container2">
+    <div id="bugger2">
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. 
+    </div>
+    <div id="victim2">*cry*</div>
+</div>
+<br/>
+
+
+<div id="container3">
+    <div id="bugger3">
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. 
+    </div>
+    <div id="victim3">*cry*</div>
+</div>
+<br />
+<div id="container4">
+    <div id="bugger4">
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit.
+    </div>
+    <div id="victim4">*cry*</div>
+</div> -->
+
+</body>
+</html>

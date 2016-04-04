@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>设置半个字母样式</title>
+	<style>
+		.halfStyle {
+			position: relative;
+			display: inline-block;
+			font-size: 80px;
+			color: black;
+			overflow: hidden;
+			white-space: preg;
+		}
+		.halfStyle:before {
+			display: block;
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50%;
+			content: attr(data-content);
+			overflow: hidden;
+			color: #f00;
+		}
+	</style>
+	<script>
+
+	</script>
+</head>
+<body>
+	<span class="halfStyle" data-content="X">X</span>
+	<span class="halfStyle" data-content="Y">Y</span>
+	<span class="halfStyle" data-content="Z">Z</span>
+	<span class="halfStyle" data-content=A>A</span>
+</body>
+</html>

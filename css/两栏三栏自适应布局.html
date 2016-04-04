@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两栏三栏自适应布局</title>
+	<style type="text/css">
+		html,body {
+			margin:0;
+			padding:0;
+			height: 100%;
+		}
+		#left,#right{
+			position:absolute;
+			top:0;
+			width:220px;
+			height:100px;
+			background-color: blue;
+		}
+		#left {
+			left:0;
+		}
+
+		#right {
+			right:0;
+		}
+
+		#main {
+			margin: 0 230px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="left">左边栏</div>
+	<div id="main">主内容</div>
+	<div id="right">右边栏</div>
+</body>
+</html>

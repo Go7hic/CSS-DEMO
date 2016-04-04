@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box; 
+		}
+
+		body {
+			padding: 0;
+			margin: 0;
+			font-size: 0;
+		}
+
+		input, textarea {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			outline: none;
+			border: 0;
+			border-radius: 0;
+			padding: 2pt 4pt;
+			padding-top: 8pt;
+			font-family: "Helvetica Neue";
+			font-size: 14pt;
+			font-weight: lighter;
+		}
+
+		::-webkit-input-placeholder {
+			color: lightgrey;
+			position: relative;
+			top: 0;
+			left: 0;
+			-webkit-transition-property: top, color;
+			-webkit-transition-duration: .1s;
+			transition-property: top, color;
+			transition-duration: .1s;
+		}
+
+
+		input:focus::-webkit-input-placeholder {
+			color: rgb(16,124,246);
+			font-size: 8pt;
+			font-weight: normal;
+			top: -8pt;
+			opacity: 1;
+			visibility: visible !important;
+		}
+
+		textarea:focus::-webkit-input-placeholder {
+			color: rgb(16,124,246);
+			font-size: 8pt;
+			font-weight: normal;
+			top: -8pt;
+			opacity: 1;
+			visibility: visible !important;
+		}
+
+		[name=title] {
+			width: 100%;
+			border-bottom: 1px solid lightgrey;
+			margin-bottom: 1px;
+			
+		}
+
+		[name=price] {
+			width: 30%;
+			margin-bottom: 1px;
+			border-bottom: 1px solid lightgrey;
+			border-right: 1px solid lightgrey;
+		}
+
+		[name=location] {
+			width: 70%;
+			border-bottom: 1px solid lightgrey;
+		}
+
+		[name=desc] {
+			width: 100%;
+		}<
+	</style>
+</head>
+<body>
+	<input name="title" type="text" placeholder="Title">
+	<input name="price" type="text" placeholder="Price">
+	<input name="location" type="text" placeholder="Specific location (optional)">
+	<textarea name="desc" rows='4' placeholder="Description"></textarea>
+	
+</body>
+</html>
