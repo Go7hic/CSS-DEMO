@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .flex {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-flex-direction: row;
+            width: 350px;
+            height: 200px;
+            border: 1px solid #dcdcdc;
+
+        }
+        .flex > div {
+            -webkit-flex: 1 1 auto;
+            flex: 1 1 auto;
+            width: 30px;
+            transition: width 0.7s ease-out;
+        }
+
+        /* flex 属性 */
+        #flex-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+
+        #flex-container > .flex-item {
+            -webkit-flex: auto;
+            flex: auto;
+        }
+
+        #flex-container > .raw-item {
+            width: 5rem;
+        }
+        #container > div {
+          display: -webkit-flex;
+          display: -ms-flex;
+          display: flex;
+          -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+          width: 140px;
+          height: 140px;
+          background: linear-gradient(-45deg, #78ff8c, #b4ffc8);
+      }
+
+      #container > div > div {
+          margin: 2px;
+          width: 30px;
+          min-height: 30px;
+          background: linear-gradient(-45deg, #788cff, #b4c8ff);
+      }
+
+      #flex-start {
+          -webkit-align-content: flex-start;
+          align-content: flex-start;
+      }
+
+      #center {
+          -webkit-align-content: center;
+          align-content: center;
+      }
+
+      #flex-end {
+          -webkit-align-content: flex-end;
+          align-content: flex-end;
+      }
+
+      #space-between {
+          -webkit-align-content: space-between;
+          align-content: space-between;
+      }
+
+      #space-around {
+          -webkit-align-content: space-around;
+          align-content: space-around;
+      }
+
+      #stretch {
+          -webkit-align-content: stretch;
+          align-content: stretch;
+      }
+      /*align-items*/
+      #flex-start2 {
+          -webkit-align-items: flex-start;
+          align-items: flex-start;
+      }
+
+      #center2 {
+          -webkit-align-items: center;
+          align-items: center;
+      }
+
+      #flex-end2 {
+          -webkit-align-items: flex-end;
+          align-items: flex-end;
+      }
+
+      #baseline {
+          -webkit-align-items: baseline;
+          align-items: baseline;
+      }
+
+
+      #stretch2 {
+          -webkit-align-items: stretch;
+          align-items: stretch;
+      }
+      /*align-self*/
+      #flex-start3 {
+          -webkit-align-self: flex-start;
+          align-self: flex-start;
+      }
+
+      #center3 {
+          -webkit-align-self: center;
+          align-self: center;
+      }
+
+      #flex-end3 {
+          -webkit-align-self: flex-end;
+          align-self: flex-end;
+      }
+
+      #baseline3 {
+          -webkit-align-self: baseline;
+          align-self: baseline;
+      }
+
+
+      #stretch3 {
+          -webkit-align-self: stretch;
+          align-self: stretch;
+      }
+      #auto {
+        -webkit-align-self: auto;
+        align-self: auto;
+    }
+    /*  flex firection */
+    .container2 > div {
+        display: flex;
+        background: #b4ffc8;
+        height: 300px;
+        width: 300px;
+    }
+    .container2 > div > div {
+        margin: 2px;
+        width: 30px;
+        min-height: 40px;
+        background: linear-gradient(-45deg, #788cff, #b4c8ff);
+    }
+    #row {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+
+    }
+    #row-reverse {
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+    #column {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+
+    }
+    #column-reverse {
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+    /* flex grow */
+
+    .content {
+      display: flex;
+      width: 600px;
+
+  }
+  .box {
+      -webkit-flex-grow: 3;
+      flex-grow: 3;
+      background:red;
+      width: 100px;
+
+  }
+  .test {
+      width: 100px;
+      border: 1px solid blue;
+  }
+  .test2 {
+      flex-grow: 1;
+      width: 100px;
+      border: 1px solid green;
+  }
+  /* justify-content */
+  #container3 > div {
+    display: flex;
+    font-family: "Courier New", "Lucida Console", monospace;
+    border: 1px solid #dcdcdc;
+  }
+
+  #container3 > div > div {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(-45deg, #788cff, #b4c8ff);
+  }
+
+  #flex-start4 {
+    justify-content: flex-start;
+  }
+
+  #center4 {
+    justify-content: center;
+  }
+
+  #flex-end4 {
+    justify-content: flex-end;
+  }
+
+  #space-between4 {
+    justify-content: space-between;
+  }
+
+  #space-around4 {
+    justify-content: space-around;
+  }
+  /* order */
+  #main { display: flex; }
+  #main > article { flex:1;         order: 0; }
+  #main > nav     { width: 200px;   order: -1; }
+  #main > aside   { width: 200px;   order: 3; }
+
+</style>
+</head>
+<body>
+    <!-- 基本的 flexbox -->
+    <p>Flexbox nuovo</p>
+    <div class="flex">
+        <div>uno</div>
+        <div>due</div>
+        <div>tre</div>
+    </div>
+    <!-- flex 属性 -->
+    <div id="flex-container">
+        <div class="flex-item" id="flex">
+            flex box
+        </div>
+        <div class="raw-item" id="raw">
+            raw box
+        </div>
+    </div>
+    <!-- align-content -->
+    <div id="container">
+        <h2>align-content</h2>
+        <p>align-content: flex-start</p>
+        <div id="flex-start">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-content: center</p>
+        <div id="center">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-content: flex-end</p>
+        <div id="flex-end">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-content: space-between</p>
+        <div id="space-between">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-content: space-around</p>
+        <div id="space-around">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-content: stretch</p>
+        <div id="stretch">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <h2>align-items</h2>
+        <p>align-items: flex-start</p>
+        <div id="flex-start2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-items: center</p>
+        <div id="center2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-items: flex-end</p>
+        <div id="flex-end2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-items: baseline</p>
+        <div id="baseline">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-items: stretch</p>
+        <div id="stretch2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h2>align self</h2>
+        <p>align-self: auto</p>
+        <div id="auto">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-self: flex-start</p>
+        <div id="flex-start3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-self: flex-end</p>
+        <div id="flex-end3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-self: center</p>
+        <div id="center3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-self: baseline</p>
+        <div id="baseline3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>align-self: stretch</p>
+        <div id="stretch3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </div>
+    <div class="container2">
+       <h2>flex-direction</h2>
+       <p>flex-direction: row</p>
+       <div id="row">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+
+    </div>
+    <p>flex-direction: row-reverse</p>
+    <div id="row-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+
+    </div>
+    <p>flex-direction: column</p>
+    <div id="column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+
+    </div>
+    <p>flex-direction: column-reverse</p>
+    <div id="column-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</div>
+<h2>flex grow</h2>
+<div class="content">
+  <div class="box">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quaerat quo et quasi soluta vitae, officia necessitatibus officiis. Iusto fugit, quos recusandae illo ratione. Odio fugit facere quaerat, ea excepturi?
+</div>
+<div class="test">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quaerat quo et quasi soluta vitae, officia necessitatibus officiis. Iusto fugit, quos recusandae illo ratione. Odio fugit facere quaerat, ea excepturi?
+</div>
+<div class="test2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quaerat quo et quasi soluta vitae, officia necessitatibus officiis. Iusto fugit, quos recusandae illo ratione. Odio fugit facere quaerat, ea excepturi?
+</div>
+</div>
+<!-- justify-content -->
+<div id="container3">
+  <p>justify-content: flex-start</p>
+  <div id="flex-start4">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <p>justify-content: flex-end</p>
+  <div id="flex-end4">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <p>justify-content: center</p>
+  <div id="center4">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <p>justify-content: space-between</p>
+  <div id="space-between4">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <p>justify-content: space-around</p>
+  <div id="space-around4">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- order -->
+<div id='main'>
+   <article>article 文章，html 结构排第一</article>
+   <nav>nav 导航，html 结构排第二</nav>
+   <aside>aside 边栏，html 结构排第三</aside>
+</div>
+</body>
+</html>

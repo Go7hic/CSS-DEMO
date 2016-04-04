@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多行文本溢出显示省略号解决方案</title>
+    <style>
+        p {width: 650px;overflow: hidden;border: 1px solid #f00;}
+        .box1 {  display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+      }
+      .box2 {
+
+        position:relative;
+        line-height:1.4em;
+        /* 3 times the line-height to show 3 lines */
+        height:4.2em;
+        overflow:hidden;
+    }
+    .box2::after {
+        content:"...";
+        font-weight:bold;
+        position:absolute;
+        bottom:0;
+        right:0;
+        padding:0 20px 1px 45px;
+        background:url(http://css88.b0.upaiyun.com/css88/2014/09/ellipsis_bg.png) repeat-y;
+    }
+
+</style>
+</head>
+<body>
+    <p class="box1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ex, magnam quidem sint cum fuga vero, pariatur ratione reprehenderit laboriosam reiciendis id, numquam sit. Possimus natus tempora suscipit, totam omnis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ex, magnam quidem sint cum fuga vero, pariatur ratione reprehenderit laboriosam reiciendis id, numquam sit. Possimus natus tempora suscipit, totam omni</p>
+    <p class="box2">WebKit Browsers will clamp the number of lines in this paragraph to 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    <p class="box3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dolore commodi perferendis inventore corporis modi quia maxime repellat iure, atque ullam incidunt, ea eveniet necessitatibus asperiores, magni repudiandae molestias eum.</p>
+</body>
+</html>

@@ -1,21 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>position</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
-<style type="text/css">
-	#sub1{
-		position: relative;
-		padding: 5px;
-		top:5px;
-		left: 5px;
-	}
+<style>
+.mod {
+    width: 200px;
+    height: 200px;
+}
+    .mod li {
+        position: relative;
+    }
+    li a i {
+        /*position: absolute;*/
+        top: 0;
+        right: -20px;
+        display: inline-block;
+        /*display: block;*/
+        width: 100px;
+        height: 200px;
+
+    }
+    .box {
+        display: none;
+    }
+    .box ul li {
+        display: block;
+    }
 </style>
 <body>
-	<div id="parent">
-		<div id="sub1">sub1</div>
-		<div id="sub2">sub2</div>
-	</div>
+    <div class="mod">
+        <ul>
+            <li><a href="">ddddddd<i>fff</i></a></li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <ul>
+            <li>ddd</li>
+            <li>ddd</li>
+            <li>ddd</li>
+            <li>ddd</li>
+            <li>ddddd</li>
+        </ul>
+    </div>
 </body>
 </html>
